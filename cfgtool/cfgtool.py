@@ -19,9 +19,6 @@
 __version__ = '0.0.1'
 
 
-import sys
-
 def main():
+    """The main entry point for the command line cfgtool."""
     print('running cfgtool program')
-
-

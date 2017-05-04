@@ -21,25 +21,25 @@ from setuptools import setup
 
 
 with open('cfgtool/cfgtool.py') as f:
-    version = re.search("^__version__\s*=\s*'(.*)'", f.read(), re.M).group(1)
-    print(version)
+    VERSION = re.search(r"^__version__\s*=\s*'(.*)'", f.read(), re.M).group(1)
 
 
 with open('README.md', 'r') as f:
-    long_description = f.read()
+    LONG_DESCRIPTION = f.read()
 
 
 setup(
-        name = 'cfgtool',
-        packages = ['cfgtool'],
-        entry_points = {
-            'console_scripts': ['cfgtool = cfgtool.cfgtool:main']
-            },
-        version = version,
-        description = (
-            'Command line program to create/modify/read configuration files'),
-        long_description = long_description,
-        author = 'Michael R. Shannon',
-        author_email = 'mrshannon.aerospace@gmail.com',
-        url = 'https://github.com/mrshannon/python-cfgtool'
-        )
+    name='cfgtool',
+    packages=['cfgtool'],
+    entry_points={
+        'console_scripts': ['cfgtool = cfgtool.cfgtool:main']
+        },
+    version=VERSION,
+    description=(
+        'Command line program to create/modify/read configuration files'),
+    long_description=LONG_DESCRIPTION,
+    license='Apache 2.0',
+    author='Michael R. Shannon',
+    author_email='mrshannon.aerospace@gmail.com',
+    url='https://github.com/mrshannon/python-cfgtool'
+    )
